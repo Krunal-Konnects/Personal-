@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Krunal Parikh — AI Product Manager">
+<title>Krunal Parikh — AI Product Manager</title>
+
+<style>
+:root{
+  --bg:#f5f5f7;
+  --surface:rgba(255,255,255,.72);
+  --text:#1d1d1f;
+  --muted:#6e6e73;
+  --line:rgba(0,0,0,.08);
+  --accent:#0071e3;
+  --dark:#0b0b0d;
+  --dark2:#151517;
+  --white:#f5f5f7;
+  --shadow:0 24px 70px rgba(0,0,0,.10);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",
+  "SF Pro Text","Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(245,245,247,.78);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.nav-inner{
+  width:min(1100px,92%);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:700;
+  letter-spacing:-.04em;
+  font-size:18px;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  color:#515154;
+  font-size:13px;
+}
+
+.nav-links a:hover{
+  color:#000;
+}
+
+.nav-cta{
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:110px 20px 80px;
+
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 34%,
+      #fff 0,
+      #f5f5f7 44%,
+      #e9e9ed 100%
+    );
+}
+
+.hero:before{
+  content:"";
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,113,227,.10),
+      transparent 68%
+    );
+
+  top:8%;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  filter:blur(8px);
+}
+
+.hero-content{
+  position:relative;
+  text-align:center;
+  max-width:950px;
+}
+
+.eyebrow{
+  font-size:15px;
+  color:var(--accent);
+  font-weight:650;
+  letter-spacing:.01em;
+  margin-bottom:18px;
+}
+
+h1{
+  margin:0;
+
+  font-size:clamp(58px,10vw,112px);
+
+  line-height:.9;
+
+  letter-spacing:-.075em;
+
+  font-weight:700;
+}
+
+.hero-sub{
+  margin:30px auto 0;
+
+  max-width:720px;
+
+  font-size:clamp(21px,3vw,30px);
+
+  line-height:1.22;
+
+  letter-spacing:-.035em;
+
+  color:#424245;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+
+  margin-top:36px;
+
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:13px 22px;
+
+  border-radius:999px;
+
+  font-size:15px;
+  font-weight:600;
+
+  transition:.2s ease;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  filter:brightness(.96);
+}
+
+.btn-secondary{
+  color:var(--accent);
+  background:rgba(0,113,227,.08);
+}
+
+.btn-secondary:hover{
+  background:rgba(0,113,227,.13);
+}
+
+.scroll{
+  margin-top:60px;
+
+  color:#86868b;
+
+  font-size:12px;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:110px 20px;
+}
+
+.container{
+  width:min(1100px,100%);
+  margin:auto;
+}
+
+.section-kicker{
+  font-size:14px;
+  color:var(--accent);
+  font-weight:650;
+  margin-bottom:12px;
+}
+
+.section-title{
+  font-size:clamp(38px,6vw,66px);
+
+  letter-spacing:-.055em;
+
+  line-height:1;
+
+  margin:0 0 24px;
+}
+
+.section-copy{
+  font-size:20px;
+
+  line-height:1.5;
+
+  color:var(--muted);
+
+  max-width:760px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:1px;
+
+  background:var(--line);
+
+  border:1px solid var(--line);
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  margin-top:50px;
+
+  box-shadow:var(--shadow);
+}
+
+.stat{
+  background:rgba(255,255,255,.75);
+
+  padding:35px 28px;
+
+  min-height:150px;
+}
+
+.stat-number{
+  font-size:42px;
+
+  font-weight:700;
+
+  letter-spacing:-.055em;
+}
+
+.stat-label{
+  margin-top:7px;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.4;
+}
+
+/* =========================
+   DARK EXPERIENCE SECTION
+========================= */
+
+.dark{
+  background:var(--dark);
+  color:var(--white);
+}
+
+.dark .section-copy{
+  color:#a1a1a6;
+}
+
+.dark .section-kicker{
+  color:#69b7ff;
+}
+
+.dark .section-title{
+  color:#f5f5f7;
+}
+
+.experience{
+  display:grid;
+  gap:18px;
+
+  margin-top:45px;
+}
+
+.role{
+  background:var(--dark2);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  padding:30px;
+
+  display:grid;
+
+  grid-template-columns:1.3fr 1fr;
+
+  gap:30px;
+
+  transition:.25s ease;
+}
+
+.role:hover{
+  transform:translateY(-3px);
+
+  border-color:rgba(255,255,255,.18);
+}
+
+.role-company{
+  font-size:24px;
+
+  font-weight:650;
+
+  letter-spacing:-.03em;
+}
+
+.role-title{
+  font-size:17px;
+
+  color:#a1a1a6;
+
+  margin-top:7px;
+}
+
+.role-date{
+  font-size:13px;
+
+  color:#86868b;
+
+  margin-top:18px;
+}
+
+.role-side{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  align-content:start;
+
+  justify-content:flex-end;
+}
+
+.pill{
+  border:1px solid rgba(255,255,255,.12);
+
+  border-radius:999px;
+
+  padding:8px 12px;
+
+  color:#c7c7cc;
+
+  font-size:12px;
+
+  background:rgba(255,255,255,.035);
+}
+
+/* =========================
+   DOMAINS
+========================= */
+
+.domains{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:50px;
+}
+
+.domain{
+  min-height:220px;
+
+  border-radius:28px;
+
+  padding:28px;
+
+  background:white;
+
+  border:1px solid var(--line);
+
+  box-shadow:0 15px 50px rgba(0,0,0,.055);
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+}
+
+.domain-icon{
+  font-size:30px;
+}
+
+.domain h3{
+  font-size:23px;
+
+  letter-spacing:-.035em;
+
+  margin:20px 0 8px;
+}
+
+.domain p{
+  color:var(--muted);
+
+  line-height:1.45;
+
+  margin:0;
+
+  font-size:15px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-top:40px;
+}
+
+.skill{
+  padding:13px 18px;
+
+  border-radius:999px;
+
+  background:white;
+
+  border:1px solid var(--line);
+
+  font-size:15px;
+
+  font-weight:550;
+
+  box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+  margin-top:50px;
+
+  border-left:1px solid #d2d2d7;
+
+  padding-left:30px;
+}
+
+.t-item{
+  position:relative;
+
+  padding:0 0 45px;
+}
+
+.t-item:before{
+  content:"";
+
+  position:absolute;
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:var(--accent);
+
+  left:-36px;
+  top:7px;
+
+  box-shadow:0 0 0 5px var(--bg);
+}
+
+.t-year{
+  font-size:13px;
+
+  color:var(--accent);
+
+  font-weight:650;
+}
+
+.t-role{
+  font-size:25px;
+
+  font-weight:650;
+
+  letter-spacing:-.035em;
+
+  margin:7px 0;
+}
+
+.t-meta{
+  color:var(--muted);
+
+  font-size:15px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:45px;
+}
+
+.edu{
+  background:white;
+
+  border:1px solid var(--line);
+
+  border-radius:25px;
+
+  padding:26px;
+}
+
+.edu-year{
+  color:var(--accent);
+
+  font-size:12px;
+
+  font-weight:650;
+}
+
+.edu h3{
+  font-size:20px;
+
+  line-height:1.2;
+
+  letter-spacing:-.03em;
+
+  margin:14px 0 9px;
+}
+
+.edu p{
+  color:var(--muted);
+
+  font-size:14px;
+
+  line-height:1.4;
+
+  margin:0;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  min-height:70vh;
+
+  display:flex;
+
+  align-items:center;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #242428,
+      #0b0b0d 60%
+    );
+}
+
+.contact-inner{
+  max-width:850px;
+
+  margin:auto;
+}
+
+.contact h2{
+  font-size:clamp(48px,8vw,92px);
+
+  line-height:.94;
+
+  letter-spacing:-.07em;
+
+  margin:0;
+}
+
+.contact p{
+  color:#a1a1a6;
+
+  font-size:20px;
+
+  line-height:1.45;
+
+  margin:28px auto;
+
+  max-width:650px;
+}
+
+.contact-links{
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  background:#0b0b0d;
+
+  color:#6e6e73;
+
+  border-top:1px solid rgba(255,255,255,.08);
+
+  padding:24px 20px;
+
+  font-size:12px;
+}
+
+.footer-inner{
+  width:min(1100px,100%);
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+  opacity:0;
+
+  transform:translateY(24px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+
+  transform:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .role{
+    grid-template-columns:1fr;
+  }
+
+  .role-side{
+    justify-content:flex-start;
+  }
+
+  .domains,
+  .education{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+
+  section{
+    padding:80px 18px;
+  }
+
+  .hero{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .stat{
+    min-height:auto;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="nav">
+
+  <div class="nav-inner">
+
+    <a class="logo" href="#top">KP.</a>
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#experience">Experience</a>
+
+      <a href="#focus">Focus</a>
+
+      <a href="#education">Education</a>
+
+      <a class="nav-cta" href="#contact">
+        Let's connect
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<main id="top">
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      AI Product Manager · Vadodara, Gujarat, India
+    </div>
+
+    <h1>
+      Krunal Parikh
+    </h1>
+
+    <p class="hero-sub">
+      Building thoughtful technology products where AI,
+      business problems and human needs meet.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-primary" href="#about">
+        Explore my journey
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="mailto:krunalparikh2030@gmail.com"
+      >
+        Get in touch
+      </a>
+
+    </div>
+
+    <div class="scroll">
+      Scroll to explore ↓
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+  <div class="container reveal">
+
+    <div class="section-kicker">
+      About
+    </div>
+
+    <h2 class="section-title">
+      Seven+ years.<br>
+      Many industries.<br>
+      One obsession: impact.
+    </h2>
+
+    <p class="section-copy">
+      With over seven years in IT, Krunal has worked across
+      AI, Healthcare, Blockchain, EdTech, FinTech, Retail
+      and Sales — driving innovation and delivering
+      technology solutions around evolving business needs.
+    </p>
+
+    <p class="section-copy" style="margin-top:18px">
+      His work has included collaboration with international
+      clients across five continents and nine countries:
+      Kuwait, UAE, France, the US, South Africa, Morocco,
+      the UK, Belgium and New Zealand.
+    </p>
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="stats reveal">
+
+      <div class="stat">
+
+        <div class="stat-number">
+          7+
+        </div>
+
+        <div class="stat-label">
+          Years in the IT industry
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div class="stat-number">
+          5
+        </div>
+
+        <div class="stat-label">
+          Continents with international client exposure
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div class="stat-number">
+          9
+        </div>
+
+        <div class="stat-label">
+          Countries across global engagements
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div class="stat-number">
+          7
+        </div>
+
+        <div class="stat-label">
+          Industry domains explored
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section class="dark" id="experience">
+
+  <div class="container">
+
+    <div class="reveal">
+
+      <div class="section-kicker">
+        Experience
+      </div>
+
+      <h2 class="section-title">
+        From business analysis<br>
+        to product leadership.
+      </h2>
+
+      <p class="section-copy">
+        A career built by progressively moving closer to the
+        product — understanding the business, working with
+        technology, and turning complex requirements into
+        outcomes.
+      </p>
+
+    </div>
+
+
+    <div class="experience">
+
+
+      <article class="role reveal">
+
+        <div>
+
+          <div class="role-company">
+            Reyna Solutions
+          </div>
+
+          <div class="role-title">
+            Product Manager
+          </div>
+
+          <div class="role-date">
+            June 2025 — Present · Vadodara
+          </div>
+
+        </div>
+
+        <div class="role-side">
+
+          <span class="pill">
+            Product Strategy
+          </span>
+
+          <span class="pill">
+            AI
+          </span>
+
+          <span class="pill">
+            International Clients
+          </span>
+
+          <span class="pill">
+            Technology
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="role reveal">
+
+        <div>
+
+          <div class="role-company">
+            Reyna Solutions
+          </div>
+
+          <div class="role-title">
+            Product Owner
+          </div>
+
+          <div class="role-date">
+            June 2024 — May 2025 · Vadodara
+          </div>
+
+        </div>
+
+        <div class="role-side">
+
+          <span class="pill">
+            Agile
+          </span>
+
+          <span class="pill">
+            Product Delivery
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="role reveal">
+
+        <div>
+
+          <div class="role-company">
+            Reyna Solutions
+          </div>
+
+          <div class="role-title">
+            Business Analyst
+          </div>
+
+          <div class="role-date">
+            May 2022 — May 2024 · Vadodara
+          </div>
+
+        </div>
+
+        <div class="role-side">
+
+          <span class="pill">
+            Requirements
+          </span>
+
+          <span class="pill">
+            Business Analysis
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="role reveal">
+
+        <div>
+
+          <div class="role-company">
+            Scrupulous Technology
+          </div>
+
+          <div class="role-title">
+            Business Analyst
+          </div>
+
+          <div class="role-date">
+            June 2018 — January 2022 · Auckland, New Zealand
+          </div>
+
+        </div>
+
+        <div class="role-side">
+
+          <span class="pill">
+            ICT
+          </span>
+
+          <span class="pill">
+            Business Analysis
+          </span>
+
+          <span class="pill">
+            New Zealand
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="role reveal">
+
+        <div>
+
+          <div class="role-company">
+            Brand Developers Limited
+          </div>
+
+          <div class="role-title">
+            Supply Chain Analyst · Sales Consultant
+          </div>
+
+          <div class="role-date">
+            July 2017 — May 2018 · Auckland, New Zealand
+          </div>
+
+        </div>
+
+        <div class="role-side">
+
+          <span class="pill">
+            Analytics
+          </span>
+
+          <span class="pill">
+            SQL
+          </span>
+
+          <span class="pill">
+            VBA / Macros
+          </span>
+
+          <span class="pill">
+            Sales
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOCUS
+========================= -->
+
+<section id="focus">
+
+  <div class="container">
+
+    <div class="reveal">
+
+      <div class="section-kicker">
+        What I bring
+      </div>
+
+      <h2 class="section-title">
+        A techno-functional<br>
+        way of thinking.
+      </h2>
+
+      <p class="section-copy">
+        The sweet spot is where product thinking,
+        technology and business context overlap.
+        Krunal's background spans multiple domains
+        and both analytical and customer-facing roles.
+      </p>
+
+    </div>
+
+
+    <div class="domains">
+
+
+      <article class="domain reveal">
+
+        <div class="domain-icon">
+          ✦
+        </div>
+
+        <div>
+
+          <h3>
+            AI & Product
+          </h3>
+
+          <p>
+            AI Agents, AI Software Development and a
+            growing focus on building meaningful
+            AI-powered products.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="domain reveal">
+
+        <div class="domain-icon">
+          ⌁
+        </div>
+
+        <div>
+
+          <h3>
+            Complex Problems
+          </h3>
+
+          <p>
+            Experience working across diverse business
+            environments and translating evolving needs
+            into technology solutions.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="domain reveal">
+
+        <div class="domain-icon">
+          ◎
+        </div>
+
+        <div>
+
+          <h3>
+            Global Perspective
+          </h3>
+
+          <p>
+            International client exposure across five
+            continents, adapting solutions to varied
+            market demands.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="reveal" style="margin-top:90px">
+
+      <div class="section-kicker">
+        Core skills
+      </div>
+
+      <div class="skills">
+
+        <span class="skill">
+          AI Agents
+        </span>
+
+        <span class="skill">
+          AI Software Development
+        </span>
+
+        <span class="skill">
+          Zoho Projects
+        </span>
+
+        <span class="skill">
+          Business Analysis
+        </span>
+
+        <span class="skill">
+          Product Management
+        </span>
+
+        <span class="skill">
+          Client Success
+        </span>
+
+        <span class="skill">
+          Market Analysis
+        </span>
+
+        <span class="skill">
+          SQL
+        </span>
+
+        <span class="skill">
+          VBA / Macros
+        </span>
+
+        <span class="skill">
+          ICT Development
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     JOURNEY
+========================= -->
+
+<section
+  style="background:#fff"
+  id="journey"
+>
+
+  <div class="container">
+
+    <div class="reveal">
+
+      <div class="section-kicker">
+        Journey
+      </div>
+
+      <h2 class="section-title">
+        The path matters.
+      </h2>
+
+      <p class="section-copy">
+        A progression from customer-facing roles and
+        analytics to business analysis, product ownership
+        and product management.
+      </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <div class="t-item reveal">
+
+        <div class="t-year">
+          2017 — 2018
+        </div>
+
+        <div class="t-role">
+          Sales & Supply Chain
+        </div>
+
+        <div class="t-meta">
+          Auckland, New Zealand · Market intelligence,
+          customer needs, sales, planning and reporting.
+        </div>
+
+      </div>
+
+
+      <div class="t-item reveal">
+
+        <div class="t-year">
+          2018 — 2022
+        </div>
+
+        <div class="t-role">
+          Business Analysis
+        </div>
+
+        <div class="t-meta">
+          Auckland, New Zealand · ICT development,
+          databases, reporting and business analysis.
+        </div>
+
+      </div>
+
+
+      <div class="t-item reveal">
+
+        <div class="t-year">
+          2022 — 2024
+        </div>
+
+        <div class="t-role">
+          Business Analyst
+        </div>
+
+        <div class="t-meta">
+          Vadodara, India · Growing into product-oriented
+          technology delivery.
+        </div>
+
+      </div>
+
+
+      <div class="t-item reveal">
+
+        <div class="t-year">
+          2024 — 2025
+        </div>
+
+        <div class="t-role">
+          Product Owner
+        </div>
+
+        <div class="t-meta">
+          Vadodara, India · Taking greater ownership
+          of product delivery.
+        </div>
+
+      </div>
+
+
+      <div class="t-item reveal">
+
+        <div class="t-year">
+          2025 — Present
+        </div>
+
+        <div class="t-role">
+          AI Product Manager
+        </div>
+
+        <div class="t-meta">
+          Vadodara, India · Connecting business,
+          technology and AI to create impactful products.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="reveal">
+
+      <div class="section-kicker">
+        Education & certifications
+      </div>
+
+      <h2 class="section-title">
+        Built on technology.<br>
+        Shaped by curiosity.
+      </h2>
+
+    </div>
+
+
+    <div class="education">
+
+
+      <article class="edu reveal">
+
+        <div class="edu-year">
+          2016
+        </div>
+
+        <h3>
+          Post Graduate Diploma
+          in Information Technology
+        </h3>
+
+        <p>
+          Southern Institute of Technology<br>
+          Computer Science
+        </p>
+
+      </article>
+
+
+      <article class="edu reveal">
+
+        <div class="edu-year">
+          2012 — 2015
+        </div>
+
+        <h3>
+          Master's Degree
+        </h3>
+
+        <p>
+          Gujarat Technological University<br>
+          Computer Science
+        </p>
+
+      </article>
+
+
+      <article class="edu reveal">
+
+        <div class="edu-year">
+          2009 — 2012
+        </div>
+
+        <h3>
+          Bachelor's Degree
+        </h3>
+
+        <p>
+          The Maharaja Sayajirao University of Baroda<br>
+          Computer Science
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="reveal" style="margin-top:55px">
+
+      <div class="skills">
+
+        <span class="skill">
+          Service Blueprint : UX Architect
+        </span>
+
+        <span class="skill">
+          Gen AI : Beyond the Chatbot
+        </span>
+
+        <span class="skill">
+          AI Micro certification
+        </span>
+
+        <span class="skill">
+          AI Fluency Framework & Foundations
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+  <div class="contact-inner reveal">
+
+    <div class="section-kicker">
+      Let's connect
+    </div>
+
+    <h2>
+      Have a complex problem?<br>
+      Let's build something.
+    </h2>
+
+    <p>
+      Krunal is passionate about solving complex problems,
+      creating business value through technology and
+      exploring opportunities to make meaningful impact.
+    </p>
+
+    <div class="contact-links">
+
+      <a
+        class="btn btn-primary"
+        href="mailto:krunalparikh2030@gmail.com"
+      >
+        Email Krunal
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="https://www.linkedin.com/in/krunal-parikh-5b986a40"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+  <div class="footer-inner">
+
+    <span>
+      © <span id="year"></span> Krunal Parikh
+    </span>
+
+    <span>
+      AI Product Manager · Vadodara, India
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+const observer =
+  new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
